@@ -263,3 +263,43 @@ p.detailsTxt {
 }
 .concertPageDiv .detailsDiv{width:100%}
 
+@media screen and (max-width: 800px) {
+    .about-link{display: none;}
+    .header{height: 60px;}
+    .search {
+        position: absolute;
+        left: 5%;
+        padding: 6px 7px;
+        margin: 0;
+        top: 20px;
+        width: 52%;
+    }
+    img.wch-logo {
+        width: auto;
+        height: 50px;
+    }
+    .feedback-list{padding-top: 104px;}
+    .concertPageDiv, .aboutDiv {
+        padding: 86px 5%;
+        height: auto;
+        min-height: unset;
+        padding-bottom: 230px;
+    }
+    .detailsDiv {width: 100%;}
+    .shows {
+        margin: 6px;
+        padding: 2px 12px 4px;
+    }
+    img.detailsPic {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto 12px;
+    }
+    p.detailsTxt {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
