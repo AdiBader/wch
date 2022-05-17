@@ -1,7 +1,11 @@
 .App {
-  text-align: center;
+    text-align: center;
+    background-color: #272727;
+    min-height: 100vh;
+    background: rgb(41,41,41);
+    background: linear-gradient(180deg, rgba(70,42,48,1) 0%, rgba(36,36,36,1) 50%);
+    background-attachment: fixed;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +40,226 @@
     transform: rotate(360deg);
   }
 }
+
+img.wch-logo {
+    width: 156px;
+    position: absolute;
+    top: 14px;
+    right: 5%;
+}
+
+.concertItem {
+    margin: 3px auto;
+    box-shadow: 0px 0px 3px 0px rgb(0 0 0 / 60%);
+    position: relative;
+    color: pink;
+    background: rgb(51, 51, 53, 0.65);
+}
+
+.concertItem a {
+    position: absolute;
+    top: 10px;
+    left: 18px;
+    color: pink;
+    z-index: 9;
+}
+.concertItem h1 {
+    margin: 0 auto 2px;
+    font-size: 20px;
+    direction: rtl;
+    color: rgb(250, 232, 237);
+    font-weight: 400;
+}
+.toggleBg, .concertItem:hover {
+    background-color: #232322;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 3px 1px rgb(22 22 22 / 50%)
+}
+.concertDiv {
+    padding: 11px 10px 18px;
+}
+.concertDate {
+    font-size: 16px;
+    margin: 0 auto;
+    font-weight: 100;
+}
+
+audio:not([controls]) {
+    display: block !important;
+}
+header {
+    background-color: #222;
+    position: fixed;
+    width: 100%;
+    padding: 10px 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    box-shadow: 0px 4px 6px 2px rgb(0 0 0 / 70%);
+    z-index: 99;
+}
+.panel {
+    position: fixed;
+    bottom: 0;
+    background: #222;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px -2px 4px 0px rgb(0 0 0 / 70%);
+    z-index: 99;
+}
+.panel .panelTitles {
+    direction: rtl;
+    width: 90%;
+    text-align: right;
+    margin: 0 auto;
+    padding-right: 9%;
+    margin-bottom: 6px;
+}
+.panel .panelTitles h2 {
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0 auto 6px;
+}
+
+#root {
+    position: relative;
+}
+.concertItem form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 0 18px
+}
+.shows {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    padding: 5px 20px 6px;
+    border-radius: 30px;
+    border: 1px solid pink;
+    cursor: pointer;
+    box-shadow: 1px 1px 8px 1px rgb(0 0 0 / 40%);
+    color: pink;
+}
+.shows:hover svg, .shows:hover{
+    color:#232322;
+    stroke: #232322;
+}
+.shows:hover{background: rgb(255, 192, 203, 0.8);}
+.feedback-list {
+    margin: 0 auto;
+    width: 90%;
+    padding: 150px 0 200px;
+}
+.search {
+    -webkit-appearance: none;
+    border: none;
+    outline: 1px solid rgba(255,192,203,0.5);
+    padding: 10px 20px ;
+    width: 50%;
+    line-height: 30px;
+    margin: 18px auto;
+    display: block;
+    direction: rtl;
+    background: transparent;
+    box-shadow: 0px 0px 6px 3px rgb(0 0 0 / 70%);
+    color: #fff;
+    font-size: 18px;
+    font-family: inherit;
+}
+.search::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 50em;
+    background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times.svg) no-repeat 100% 100% ;
+    filter:invert(1) ;
+    background-size: contain;
+    opacity: 1;
+}
+.search::placeholder {
+    color: #888;
+    font-size: 15px;
+  }
+.about-link a {
+    color: pink;
+}
+.about-link a:hover{
+    color:white;
+}
+.about-link {
+    position: absolute;
+    left: 5%;
+    top: 28px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 11px;
+    width: 26px;
+    height: 26px;
+}
+.concertPageDiv,
+.aboutDiv {
+    display: block;
+    min-height: 80vh;
+    background: rgb(41,41,41);
+    background: linear-gradient(180deg, rgba(60,44,44,1) 0%, rgba(34,34,34,1) 50%);
+    background-attachment: fixed;
+    text-align: right;
+    padding: 120px 25%;
+    color: #fff;
+}
+.playTitle {
+    display: inline-block;
+    float: left;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+.playConcert svg{
+    color: pink;
+    display: inline-block;
+    font-size: 18px;
+    vertical-align: middle;
+}
+.header.active img.wch-logo{
+    width: 120px;
+    top: 18px;
+}
+a.backHome {
+    float: left;
+    color: rgb(250, 232, 237);
+    text-decoration: none;
+    border: 1px solid rgb(250, 232, 237);
+    padding: 6px 18px;
+}
+.toPage{
+    text-decoration: none;
+    color: rgb(250, 232, 237);
+}
+.detailsBlock {
+    text-align: right;
+    display: block;
+    direction: rtl;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.aboutDiv .detailsBlock{width: 100%;}
+img.detailsPic {
+    display: inline-block;
+    width: 30%;
+}
+p.detailsTxt {
+    display: inline-block;
+    width: 66%;
+    margin-right: 4%;
+    vertical-align: top;
+}
+.detailsDiv {
+    width: 50%;
+    margin: 0 auto;
+}
+.concertPageDiv .detailsDiv{width:100%}
+
