@@ -301,5 +301,6 @@ p.detailsTxt {
         width: 100%;
         margin-right: 0;
     }
+    .detailsBlock{padding: 0;}
 }
 
