@@ -12,7 +12,7 @@ import Panel from './Components/Panel';
 import SearchBox from './Components/SearchBox';
 import Page from './Pages/Page';
 
-const getUrl = "http://pubghm.herokuapp.com/main.json"
+const getUrl = "https://pubghm.herokuapp.com/main.json"
 
 function App() {
     const [panel, setPanel] = useState({"title":"אוזו בזוקה","wav":"https://uc26fddab1406c023574b7c7013a.dl.dropboxusercontent.com/cd/0/get/BlAO-aKOja14l8OIErEYibZDyCiIRw0vmiFGSK8neZJiW0ntjVPfsLPmmDaLiyGaWgvaoMf4DlC6qhngvwHcfqDsDvGisYPKsorYsl1OuqHl0u-KqTwZLzCNlskdYLPBxuTiktHu86N2kuTCAz5nc6SroMPjBBzoes2bXNBO90AznHKlL84oKkQgzAF-PCPu0sY/file"})
