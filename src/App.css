@@ -282,7 +282,7 @@ p.detailsTxt {
     .concertPageDiv, .aboutDiv {
         padding: 86px 5%;
         height: auto;
-        min-height: unset;
+        min-height: 100vh;
         padding-bottom: 230px;
     }
     .detailsDiv {width: 100%;}
