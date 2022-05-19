@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 
 function Panel({ concertNight, show }) {
-
 return (
         <div className="panel" style={{color: "#fff"}}>
         <div className="panelTitles">
@@ -16,6 +15,7 @@ return (
                     <AudioPlayer
                         autoPlay
                         showFilledVolume = 'true' 
+                        progressJumpStep = '10000'
                         src={show? show.wav: ''}
                         onPlay={e => console.log("onPlay")}
                         // other props here

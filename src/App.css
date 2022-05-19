@@ -67,6 +67,7 @@ img.wch-logo {
     position: relative;
     color: pink;
     background: rgb(51, 51, 53, 0.65);
+    transition: 0.3s;
 }
 
 .concertItem a {
@@ -156,6 +157,7 @@ header {
     cursor: pointer;
     box-shadow: 1px 1px 8px 1px rgb(0 0 0 / 40%);
     color: pink;
+    transition: 0.2s;
 }
 .shows:hover svg, .shows:hover{
     color:#232322;
@@ -182,6 +184,10 @@ header {
     color: #fff;
     font-size: 18px;
     font-family: inherit;
+    background-image: url(./Components/assets/magnifier.png);
+    background-repeat: no-repeat;
+    background-size: 21px;
+    background-position: 11px 15px;
 }
 .search::-webkit-search-cancel-button {
     -webkit-appearance: none;
@@ -298,6 +304,9 @@ p.detailsTxt {
     font-size: 12px;
 }
 
+
+
+
 @media screen and (max-width: 800px) {
     .about-link{display: none;}
     .header{height: 60px;}
@@ -307,7 +316,9 @@ p.detailsTxt {
         padding: 6px 7px;
         margin: 0;
         top: 20px;
-        width: 52%;
+        width: 54%;
+        background-position: 9px 13px;
+        background-size: 18px;
     }
     img.wch-logo {
         width: auto;
@@ -354,6 +365,7 @@ p.detailsTxt {
         padding-right: 0;
         margin-bottom: 2px;
     }
+    .containerBG{background: rgb(60, 48,52,1);}
     
 }
 
