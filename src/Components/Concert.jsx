@@ -18,7 +18,8 @@ function Concert({concert, playPanel}) {
     <div className='concertDiv' onClick={handleToggle}>
         <h2 className='concertName'>{concert.name}</h2>
         <div className='concertDate'>{concert.date}</div>
-        {isToggleOn ? <FaChevronDown className='chevron' /> : <FaChevronUp className='chevron' />}
+        {isToggleOn ? <FaChevronDown className='chevron' /> : <FaChevronUp className='chevron' 
+        />}
         <Link to={concert.path}>
             <FaQuestion size={10} />
         </Link>

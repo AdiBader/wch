@@ -18,7 +18,11 @@
   height: 40vmin;
   pointer-events: none;
 }
-body{font-family: 'Open Sans', sans-serif;}
+body{
+    font-family: 'Open Sans', sans-serif;
+    -webkit-appearance: none;
+    appearance: none;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
