@@ -1,15 +1,24 @@
 .App {
     text-align: center;
     background-color: #272727;
-    min-height: 100vh;
+    position: relative;
+}
+.containerBG {
+    text-align: center;
     background: rgb(41,41,41);
     background: linear-gradient(180deg, rgba(70,42,48,1) 0%, rgba(36,36,36,1) 50%);
     background-attachment: fixed;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
 }
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+body{font-family: 'Open Sans', sans-serif;}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -63,12 +72,12 @@ img.wch-logo {
     color: pink;
     z-index: 9;
 }
-.concertItem h1 {
-    margin: 0 auto 2px;
+.concertItem h2 {
+    margin: 0 auto 4px;
     font-size: 20px;
     direction: rtl;
     color: rgb(250, 232, 237);
-    font-weight: 400;
+    font-weight: 300;
 }
 .toggleBg, .concertItem:hover {
     background-color: #232322;
@@ -113,13 +122,13 @@ header {
     width: 90%;
     text-align: right;
     margin: 0 auto;
-    padding-right: 9%;
+    padding-right:10%;
     margin-bottom: 6px;
 }
 .panel .panelTitles h2 {
     font-weight: bold;
-    font-size: 22px;
-    margin: 0 auto 6px;
+    font-size: 25px;
+    margin: 0 auto 1px;
 }
 
 #root {
@@ -200,16 +209,26 @@ header {
     width: 26px;
     height: 26px;
 }
-.concertPageDiv,
-.aboutDiv {
+.concertPageDiv, .aboutDiv {
     display: block;
-    min-height: 80vh;
-    background: rgb(41,41,41);
-    background: linear-gradient(180deg, rgba(60,44,44,1) 0%, rgba(34,34,34,1) 50%);
-    background-attachment: fixed;
     text-align: right;
-    padding: 120px 25%;
+    width: 50%;
     color: #fff;
+    margin: 0 auto;
+    position: relative;
+    padding: 120px 0 270px;
+    direction: rtl;
+}
+.containerBG {
+    text-align: center;
+    background: rgb(41,41,41);
+    background: linear-gradient(180deg, rgba(70,42,48,1) 0%, rgba(36,36,36,1) 50%);
+    background-attachment: fixed;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
 }
 .playTitle {
     display: inline-block;
@@ -233,6 +252,7 @@ a.backHome {
     text-decoration: none;
     border: 1px solid rgb(250, 232, 237);
     padding: 6px 18px;
+    margin-top: 20px;
 }
 .toPage{
     text-decoration: none;
@@ -261,7 +281,18 @@ p.detailsTxt {
     width: 50%;
     margin: 0 auto;
 }
-.concertPageDiv .detailsDiv{width:100%}
+.concertPageDiv .detailsDiv {
+    width: 100%;
+    margin: 10px auto;
+}
+.concertItem .chevron {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    color: pink;
+    z-index: 9;
+    font-size: 12px;
+}
 
 @media screen and (max-width: 800px) {
     .about-link{display: none;}
@@ -279,11 +310,13 @@ p.detailsTxt {
         height: 50px;
     }
     .feedback-list{padding-top: 104px;}
-    .concertPageDiv, .aboutDiv {
-        padding: 86px 5%;
+    .concertPageDiv, .aboutDiv {       
         height: auto;
-        min-height: unset;
-        padding-bottom: 230px;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .concertPageDiv h1, .aboutDiv h1 {
+        margin: 0 auto 14px;
     }
     .detailsDiv {width: 100%;}
     .shows {
@@ -301,6 +334,22 @@ p.detailsTxt {
         width: 100%;
         margin-right: 0;
     }
-    .detailsBlock{padding: 0;}
+    .detailsBlock {
+        text-align: right;
+        display: block;
+        direction: rtl;
+        width: 90%;
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+    .panel .panelTitles h2 {
+        font-size: 22px;
+    }
+    .panel {padding: 10px 0;}
+    .panel .panelTitles {
+        padding-right: 0;
+        margin-bottom: 2px;
+    }
+    
 }
 

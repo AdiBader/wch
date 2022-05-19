@@ -3,20 +3,20 @@ import './audio-player-style.scss'
 import { Link } from 'react-router-dom'
 
 
-function Panel({ panel, panelName }) {
+function Panel({ concertNight, show }) {
 
 return (
         <div className="panel" style={{color: "#fff"}}>
         <div className="panelTitles">
-            <h2 style={{fontWeight: "bold", fontSize: "24px", color: "pink"}}>{panel.title}</h2>
-            <Link className='toPage' to={panelName.path} ><span>{panelName.date}</span></Link>
+            <h2 style={{color: "pink"}}>{show? show.title: '---'}</h2>
+            <Link className='toPage' to={concertNight? concertNight.path : '/'} ><span>{concertNight? concertNight.date : '123'}</span></Link>
         </div>
            
                 <div className='panelShow'  >
                     <AudioPlayer
                         autoPlay
                         showFilledVolume = 'true' 
-                        src={panel.wav}
+                        src={show? show.wav: ''}
                         onPlay={e => console.log("onPlay")}
                         // other props here
                     />

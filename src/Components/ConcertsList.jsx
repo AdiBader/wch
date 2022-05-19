@@ -1,11 +1,11 @@
 import Concert from './Concert'
 
-function ConcertsList({concerts, handlePanel}) {
+function ConcertsList({concerts, playPanel}) {
     
       return (
         <div className='feedback-list'>
-            {concerts.map((item, index) => (    
-                <Concert item={item} handlePanel={handlePanel} key={index}/> 
+            {concerts.map((concert, index) => (    
+                <Concert concert={concert} playPanel={playPanel} key={index}/> 
             ))
             }
         </div>

@@ -1,42 +1,35 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { FiPlay } from 'react-icons/fi'
+import axios from "axios";
+import { useState, useEffect } from "react";
 
-function Details({concert, handlePanel}) {
-    
-    const [showsList, setShowsList] = useState([])
+import Spinner from './shared/spinner';
+
+function Details({concert, playPanel}) {
     const [showsData, setShowsData] = useState([])
-        
-    // const getUrl = "http://localhost:5000/playlist"
+    const [showsPlaylist, setShowsPlaylist] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
     
     const url = `https://pubghm.herokuapp.com/main/${concert.path}.json`
-   
-
-    // const getUrl = `http://pubghm.herokuapp.com/main/${panel.path}.json`
     
     useEffect(() => {
         fetchShowsList()
-            
     }, [concert])
     
-    // Fetch feedbacks
+    // Fetch shows
     const fetchShowsList = async () => {
         const response = await axios.get(url); 
-        setShowsData(response.data)       
-        setShowsList(response.data.playlist);
-        
+        setShowsData(response.data)    
+        setShowsPlaylist(response.data.playlist)
+        setIsLoading(false)     
     }
 
-   
-  return (
+  return isLoading ? <Spinner /> : (
     <div className="detailsDiv">
         <form >
-            {showsList.map((item, index) => ( 
-                    <div className='shows' key={index} onClick={() => handlePanel(concert, item)}>
-                        <div className="playConcert"><FiPlay style={{color: "pink"}}/><div className="playTitle">{item.title}</div></div>
-                    </div>
-                
-                   
+            {showsPlaylist.map((show, index) => ( 
+                    <div className='shows' key={index} onClick={() => playPanel(concert, show)}>
+                        <div className="playConcert"><FiPlay style={{color: "pink"}}/><div className="playTitle">{show.title}</div></div>
+                    </div>                                  
                 ))
             }
         </form>

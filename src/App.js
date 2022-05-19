@@ -11,13 +11,15 @@ import { Link } from 'react-router-dom'
 import Panel from './Components/Panel';
 import SearchBox from './Components/SearchBox';
 import Page from './Pages/Page';
+import Spinner from './Components/shared/spinner';
 
 const getUrl = "https://pubghm.herokuapp.com/main.json"
 
 function App() {
-    const [panel, setPanel] = useState({"title":"אוזו בזוקה","wav":"https://uc26fddab1406c023574b7c7013a.dl.dropboxusercontent.com/cd/0/get/BlAO-aKOja14l8OIErEYibZDyCiIRw0vmiFGSK8neZJiW0ntjVPfsLPmmDaLiyGaWgvaoMf4DlC6qhngvwHcfqDsDvGisYPKsorYsl1OuqHl0u-KqTwZLzCNlskdYLPBxuTiktHu86N2kuTCAz5nc6SroMPjBBzoes2bXNBO90AznHKlL84oKkQgzAF-PCPu0sY/file"})
-    const [panelName, setPanelName] = useState({"date":"18/05/2019","name":"אוזו בזוקה","path":"20190518 אוזו בזוקה"})
+    const [show, setShow] = useState([])
+    const [concertNight, setConcertNight] = useState({"date":"","name":"","path":""})
     const [concerts, setConcerts] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
     const [filteredConcerts, setFilteredConcerts] = useState(concerts)
     const [searchField, setSearchField] = useState('')
     
@@ -36,12 +38,13 @@ function App() {
     // Fetch concerts
     const fetchConcerts = async () => {
         const response = await axios.get(getUrl, {mode: 'no-cors'})      
-        setConcerts(response.data);        
+        setConcerts(response.data); 
+        setIsLoading(false)       
     }
 
-    const handlePanel = (name, concert) => {
-        setPanelName(name)
-        setPanel(concert)
+    const playPanel = (concertNight, show) => {
+        setConcertNight(concertNight)
+        setShow(show)
     }
 
     const handleChange = (e) => {
@@ -74,7 +77,7 @@ function App() {
     {
     concerts.map((concert, key) => (
         <Route path={encode(concert.path)} key={key} element={
-            <Page concert={concert} handlePanel={handlePanel} />
+            <Page concert={concert} playPanel={playPanel} />
         }>
         </Route>
     ))
@@ -87,18 +90,15 @@ function App() {
     <Route exact path='/'
     element={
     <div className="App">
-    
-      <ConcertsList concerts={filteredConcerts} handlePanel={handlePanel}/>
+    <div className='containerBG'></div>
+    {isLoading ? <Spinner style={{paddingBottom: '300px'}} /> : <ConcertsList concerts={filteredConcerts} playPanel={playPanel}  />}
       
     </div>
-    }>
-                
+    }>            
     </Route>
-
-    
-    
     </Routes>
-    <Panel panel={panel} panelName={panelName} />
+
+    <Panel show={show} concertNight={concertNight} />
     </div>
     </Router>
     </React.StrictMode>

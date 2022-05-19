@@ -1,15 +1,13 @@
 // import { useState, useEffect, useContext } from "react"
-import { FaQuestion } from 'react-icons/fa'
+import { FaQuestion, FaChevronDown, FaChevronUp } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Details from './Details';
 
-
-
-function Concert({item, handlePanel}) {
+function Concert({concert, playPanel}) {
     const [isToggleOn, setIsToggleOn] = useState(false)
     const [toggleBg, setToggleBg] = useState('') 
-
+    
     function handleToggle() {
         setIsToggleOn(prev => !prev)       
         !isToggleOn ? setToggleBg('toggleBg') : setToggleBg('')
@@ -18,13 +16,14 @@ function Concert({item, handlePanel}) {
   return (
     <div className={'concertItem ' + toggleBg} >
     <div className='concertDiv' onClick={handleToggle}>
-        <h1 className='concertName'>{item.name}</h1>
-        <div className='concertDate'>{item.date}</div>
-        <Link to={item.path}>
+        <h2 className='concertName'>{concert.name}</h2>
+        <div className='concertDate'>{concert.date}</div>
+        {isToggleOn ? <FaChevronDown className='chevron' /> : <FaChevronUp className='chevron' />}
+        <Link to={concert.path}>
             <FaQuestion size={10} />
         </Link>
     </div>
-        {isToggleOn ? <Details concert={item} handlePanel={handlePanel} /> : null}       
+        {isToggleOn && <Details concert={concert} playPanel={playPanel} /> }       
     </div>
     )
 }

@@ -3,17 +3,19 @@ import { Link } from 'react-router-dom'
 import Details from "../Components/Details";
 
 
-function Page({concert, handlePanel}) {
+function Page({concert, playPanel}) {
     
 
   return (
-    <div className='concertPageDiv'>
-        <h1>{concert.name}</h1>
-        <div>shalom!</div>
-        <Details concert={concert} handlePanel={handlePanel} />
-        <Link className='backHome' to='/'>Back to home</Link>
-
+    <>
+        <div className='containerBG'></div>
+        <div className='concertPageDiv'>
+            <h1>{concert.name}</h1>
+            <div>רשימת הקלטות:</div>
+            <Details concert={concert} playPanel={playPanel} />
+            <Link className='backHome' to='/'>Back to home</Link>
         </div>
+    </>
   )
 }
 

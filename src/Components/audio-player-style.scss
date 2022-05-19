@@ -277,3 +277,44 @@ $rhap_font-family: inherit !default;
     outline: 0;
   }
 }
+
+
+@media screen and (max-width: 800px) {
+/* player */
+.rhap_volume-controls,
+.rhap_additional-controls{display:none !important;}
+.rhap_controls-section {
+    justify-content: center !important;
+}
+.rhap_current-time {
+    position: absolute;
+    left: 0;
+    top: 25px;
+}
+.rhap_total-time{
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+.rhap_progress-section {
+    display: block;
+    position: relative;
+}
+.rhap_time {
+    margin-top: 2px;
+    font-weight: 100;
+}
+.rhap_progress-container {margin: 0 0 0 10px;}
+.rhap_container {
+    width: 90%;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+.rhap_play-pause-button {
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+}
+
+
+}
