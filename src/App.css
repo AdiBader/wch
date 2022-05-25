@@ -396,7 +396,7 @@ p.detailsTxt {
         margin-bottom: 2px;
     }
     .containerBG{
-        background: rgb(40, 33,38,1);
+        background: rgba(60, 48,54,1);
     }
     
     .header .inputDiv {width: auto;}
