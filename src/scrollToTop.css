@@ -1,5 +1,6 @@
 .top-to-btm{
     position: relative;
+    z-index: 999;
   }
   .icon-position{
     position: fixed;
@@ -44,10 +45,13 @@
 
   @media screen and (max-width: 800px) {
     .icon-style {
-        background-color: #333;
+        background-color: #222;
         height: 30px;
         width: 30px;
         animation: none;
     }
-    .icon-position {bottom: 200px; right:7%;}
+    .icon-position {
+        bottom: 20px;
+        right: 5%;
+    }
 }

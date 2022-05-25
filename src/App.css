@@ -396,12 +396,7 @@ p.detailsTxt {
         margin-bottom: 2px;
     }
     .containerBG{
-        background-color: rgb(36, 36,36,1);
-        background-image: url(./Components/assets/bgGr.png);
-        background-repeat: repeat-x;
-        background-position: 0 60px;
-        background-attachment: fixed;
-
+        background: rgb(40, 33,38,1);
     }
     
     .header .inputDiv {width: auto;}
