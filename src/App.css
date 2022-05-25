@@ -103,6 +103,7 @@ audio:not([controls]) {
 }
 header {
     background-color: #222;
+    height: 86px;
     position: fixed;
     width: 100%;
     padding: 10px 0;
@@ -169,12 +170,13 @@ header {
     width: 90%;
     padding: 150px 0 200px;
 }
-.search {
+
+.header input.search {
     -webkit-appearance: none;
     border: none;
     outline: 1px solid rgba(255,192,203,0.5);
-    padding: 10px 20px ;
-    width: 50%;
+    padding: 8px 11px;
+    width: 100%;
     line-height: 30px;
     margin: 18px auto;
     display: block;
@@ -188,6 +190,12 @@ header {
     background-repeat: no-repeat;
     background-size: 21px;
     background-position: 11px 15px;
+}
+.header .inputDiv {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
 }
 .search::-webkit-search-cancel-button {
     -webkit-appearance: none;
@@ -252,10 +260,7 @@ header {
     font-size: 18px;
     vertical-align: middle;
 }
-.header.active img.wch-logo{
-    width: 120px;
-    top: 18px;
-}
+
 a.backHome {
     float: left;
     color: rgb(250, 232, 237);
@@ -304,7 +309,32 @@ p.detailsTxt {
     font-size: 12px;
 }
 
+.searchBox .searchIcons{
+    display:none;
+    position: absolute;
+    left: 5%;
+    top: 25px;
+    font-size: 33px;
 
+}
+.searchIcons.goSearch {
+    display: block;
+    top: 13px;
+    left: 5%;
+    font-weight: bold;
+    font-size: 31px;
+    fill: #fff;
+}
+.active .searchBox .searchIcons.goSearch{display: none;}
+.active .searchBox .searchIcons.close {
+    z-index: 3;
+    display: block;
+    font-size: 29px;
+    top: 11px;
+    border-right: 1px solid #555;
+    padding: 0 1px;
+    left: 7px;
+}
 
 
 @media screen and (max-width: 800px) {
@@ -365,7 +395,35 @@ p.detailsTxt {
         padding-right: 0;
         margin-bottom: 2px;
     }
-    .containerBG{background: rgb(60, 48,52,1);}
+    .containerBG{
+        background-color: rgb(36, 36,36,1);
+        background-image: url(./Components/assets/bgGr.png);
+        background-repeat: repeat-x;
+        background-position: 0 60px;
+        background-attachment: fixed;
+
+    }
+    
+    .header .inputDiv {width: auto;}
+    .searchBox {
+        position: absolute;
+        left: 5%;
+        width: 50%;
+    }
+    .header input.search{
+        margin: 0 auto;
+        top: 10px;
+        padding: 5px;
+        background-image: none;
+    }
+    .active .searchBox .searchIcons.close {
+        font-size: 27px;
+        top: 17px;
+        left: 10px;
+    }
+    .search::-webkit-search-cancel-button {display: none;}
+    
+    
     
 }
 

@@ -4,7 +4,7 @@ function ConcertsList({concerts, playPanel}) {
     
       return (
         <div className='feedback-list'>
-            {concerts.map((concert, index) => (    
+            {concerts.map((concert, index) => (       
                 <Concert concert={concert} playPanel={playPanel} key={index}/> 
             ))
             }

@@ -2,28 +2,26 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import axios from "axios";
+import {isMobile} from 'react-device-detect';
+
+import Header from './Components/Header';
 import ConcertsList from './Components/ConcertsList';
 import AboutPage from './Pages/AboutPage';
-import AboutIconLink from './Components/AboutIconLink';
-import axios from "axios";
-import { Link } from 'react-router-dom'
-
-
-import Panel from './Components/Panel';
-import SearchBox from './Components/SearchBox';
 import Page from './Pages/Page';
+import Panel from './Components/Panel';
+import ScrollToTop from './Components/ScrollToTop';
 
 
 const getUrl = "https://pubghm.herokuapp.com/main.json"
 
 function App() {
-   
+    const [show, setShow] = useState([])
+    const [concertNight, setConcertNight] = useState({"date":"","name":"","path":""})
     const [concerts, setConcerts] = useState([])
     const [filteredConcerts, setFilteredConcerts] = useState(concerts)
     const [searchField, setSearchField] = useState('')
-
-     const [show, setShow] = useState([])
-    const [concertNight, setConcertNight] = useState({"date":"","name":"","path":"/"})
+    const [active, setActive] = useState(false)
     
     useEffect(() => {
         fetchConcerts()
@@ -40,7 +38,7 @@ function App() {
     // Fetch concerts
     const fetchConcerts = async () => {
         const response = await axios.get(getUrl, {mode: 'no-cors'})      
-        setConcerts(response.data);      
+        setConcerts(response.data);        
     }
 
     const playPanel = (concertNight, show) => {
@@ -53,31 +51,23 @@ function App() {
         setSearchField(tempSearchField)
     }
 
-    function encode(path) {
-        return encodeURI(path);
+    const toggleSearch = () => {
+        setActive(prev => !prev)
+        active && setSearchField('')
     }
-
+        
 
   return (
     <React.StrictMode>
     <Router>
-    <div className='container'>
+    <div className='container' id='container'>
     
-    <header className='header'>
-    <SearchBox 
-        placeholder='חפש/י מופע' 
-        handleChange={handleChange} 
-        />
-    <AboutIconLink />
-    <Link to='/'>
-        <img src='/Images/wch-logo.png' className='wch-logo' alt='logo' title='logo' />
-    </Link>
-</header>
+    <Header handleChange={handleChange} toggleSearch={toggleSearch} active={active}/>
     
     <Routes>
     {
     concerts.map((concert, key) => (
-        <Route path={encode(concert.path)} key={key} element={
+        <Route path={encodeURI(concert.path)} key={key} element={
             <Page concert={concert} playPanel={playPanel} />
         }>
         </Route>
@@ -90,14 +80,14 @@ function App() {
     
     <Route exact path='/'
     element={
-    <div className="App">
+    <div className={isMobile? 'App mobile' : 'App'}>
     <div className='containerBG'></div>
-    <ConcertsList concerts={filteredConcerts} playPanel={playPanel}  />
-      
+      <ConcertsList concerts={filteredConcerts} playPanel={playPanel} />
     </div>
     }>            
     </Route>
     </Routes>
+    <ScrollToTop />
     <Panel show={show} concertNight={concertNight} />
     </div>
     </Router>
@@ -106,12 +96,3 @@ function App() {
 }
 
 export default App;
-
-
-// {
-//     concerts.map((concert, key) => (
-//         <Route exact path={`/${concert.path}`} key={key} element={
-//             <Page concert={concert} />
-//         } />
-//     ))
-// }

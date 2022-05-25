@@ -1,7 +1,7 @@
 // import { useState, useEffect, useContext } from "react"
 import { FaQuestion, FaChevronDown, FaChevronUp } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Details from './Details';
 
 function Concert({concert, playPanel}) {
