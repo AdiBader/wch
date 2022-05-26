@@ -323,7 +323,7 @@ p.detailsTxt {
     left: 5%;
     font-weight: bold;
     font-size: 31px;
-    fill: #fff;
+    fill: rgb(250, 232, 237);
 }
 .active .searchBox .searchIcons.goSearch{display: none;}
 .active .searchBox .searchIcons.close {
@@ -334,12 +334,16 @@ p.detailsTxt {
     border-right: 1px solid #555;
     padding: 0 1px;
     left: 7px;
+    fill: rgb(250, 232, 237);
 }
 
 
 @media screen and (max-width: 800px) {
     .about-link{display: none;}
-    .header{height: 60px;}
+    .header {
+        height: 70px;
+        padding: 0;
+    }
     .search {
         position: absolute;
         left: 5%;
@@ -352,7 +356,12 @@ p.detailsTxt {
     }
     img.wch-logo {
         width: auto;
-        height: 50px;
+        height: 53px;
+        top: 9px;
+    }
+    .searchIcons.goSearch {
+        top: 20px;
+        font-size: 34px;
     }
     .feedback-list{padding-top: 104px;}
     .concertPageDiv, .aboutDiv {       
@@ -407,14 +416,15 @@ p.detailsTxt {
     }
     .header input.search{
         margin: 0 auto;
-        top: 10px;
+        top: 16px;
         padding: 5px;
         background-image: none;
     }
     .active .searchBox .searchIcons.close {
         font-size: 27px;
-        top: 17px;
+        top: 23px;
         left: 10px;
+        padding-right: 2px;
     }
     .search::-webkit-search-cancel-button {display: none;}
     
