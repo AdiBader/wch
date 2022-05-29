@@ -159,6 +159,9 @@ header {
     margin: 0 auto;
     width: 90%;
     padding: 150px 0 200px;
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%);
 }
 
 .header input.search {
@@ -230,14 +233,13 @@ header {
 .containerBG {
     text-align: center;
     background: rgba(60, 48,54,1);
-    background: linear-gradient(180deg, rgba(70,42,48,1) 0%, rgba(36,36,36,1) 50%);
-    background: -webkit-linear-gradient(-90deg, rgba(70,42,48,1) 0%, rgba(36,36,36,1) 50%);
-    background-attachment: fixed;
-    position: fixed;
-    width: 100%;
+    background: linear-gradient(180deg, rgba(70,42,48,1) 0%, rgba(40,40,40,1) 50%);
+    background: -webkit-linear-gradient(-90deg, rgba(70,42,48,1) 0%, rgba(40,40,40,1) 50%);
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100vh;
-    top: 0;
-    right: 0;
+    width: 100vw;
+    position: fixed;
 }
 .playTitle {
     display: inline-block;
@@ -340,9 +342,7 @@ p.detailsTxt {
         height: 70px;
         padding: 0;
     }
-    .containerBG {
-        background: rgba(60, 48,54,1);
-    }
+    /* .containerBG {background: rgba(60, 48,54,1);} */
     .search {
         position: absolute;
         left: 5%;
