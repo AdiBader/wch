@@ -1,5 +1,6 @@
 // import { useState, useEffect, useContext } from "react"
-import { FaQuestion, FaChevronDown, FaChevronUp } from 'react-icons/fa'
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
+import { HiDotsHorizontal } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
 import { useState } from "react";
 import Details from './Details';
@@ -18,10 +19,10 @@ function Concert({concert, playPanel}) {
     <div className='concertDiv' onClick={handleToggle}>
         <h2 className='concertName'>{concert.name}</h2>
         <div className='concertDate'>{concert.date}</div>
-        {isToggleOn ? <FaChevronDown className='chevron' /> : <FaChevronUp className='chevron' 
+        {isToggleOn ? <FaChevronDown className='iconR chevron' /> : <FaChevronUp className='iconR chevron' 
         />}
         <Link to={concert.path}>
-            <FaQuestion size={10} />
+            <HiDotsHorizontal className='iconR dots3' />
         </Link>
     </div>
         {isToggleOn && <Details concert={concert} playPanel={playPanel} /> }       

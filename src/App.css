@@ -239,8 +239,9 @@ header {
 }
 .containerBG {
     text-align: center;
-    background: rgb(41,41,41);
+    background: rgba(60, 48,54,1);
     background: linear-gradient(180deg, rgba(70,42,48,1) 0%, rgba(36,36,36,1) 50%);
+    background: -webkit-linear-gradient(-90deg, rgba(70,42,48,1) 0%, rgba(36,36,36,1) 50%);
     background-attachment: fixed;
     position: fixed;
     width: 100%;
@@ -300,13 +301,18 @@ p.detailsTxt {
     width: 100%;
     margin: 10px auto;
 }
-.concertItem .chevron {
+.concertItem .iconR {
     position: absolute;
     top: 14px;
     right: 18px;
     color: pink;
     z-index: 9;
     font-size: 12px;
+}
+.concertItem .iconR.dots3 {
+    left: 0;
+    top: 0;
+    font-size: 15px;
 }
 
 .searchBox .searchIcons{
@@ -403,9 +409,6 @@ p.detailsTxt {
     .panel .panelTitles {
         padding-right: 0;
         margin-bottom: 2px;
-    }
-    .containerBG{
-        background: rgba(60, 48,54,1);
     }
     
     .header .inputDiv {width: auto;}
