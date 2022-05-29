@@ -342,7 +342,7 @@ p.detailsTxt {
         height: 70px;
         padding: 0;
     }
-    /* .containerBG {background: rgba(60, 48,54,1);} */
+    .containerBG {background: #3c3036;}
     .search {
         position: absolute;
         left: 5%;
