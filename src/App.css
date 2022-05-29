@@ -3,17 +3,7 @@
     background-color: #272727;
     position: relative;
 }
-.containerBG {
-    text-align: center;
-    background: rgb(41,41,41);
-    background: linear-gradient(180deg, rgba(70,42,48,1) 0%, rgba(36,36,36,1) 50%);
-    background-attachment: fixed;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    right: 0;
-}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -349,6 +339,9 @@ p.detailsTxt {
     .header {
         height: 70px;
         padding: 0;
+    }
+    .containerBG {
+        background: rgba(60, 48,54,1);
     }
     .search {
         position: absolute;
