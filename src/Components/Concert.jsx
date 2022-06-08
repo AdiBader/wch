@@ -25,7 +25,7 @@ function Concert({concert, playPanel}) {
             <HiDotsHorizontal className='iconR dots3' />
         </Link>
     </div>
-        {isToggleOn && <Details concert={concert} playPanel={playPanel} /> }       
+        {isToggleOn && <Details concert={concert} playPanel={playPanel} fromPage={false} /> }       
     </div>
     )
 }

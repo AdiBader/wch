@@ -12,9 +12,9 @@ function Page({concert, playPanel}) {
         <div className='concertPageDiv'>
             <h1>{concert.name}</h1>
             <div>רשימת הקלטות:</div>
-            <Details concert={concert} playPanel={playPanel} />
+            <Details concert={concert} playPanel={playPanel} fromPage={true} />
             <Link className='backHome' to='/'>Back to home</Link>
-            <a className='WAbutton' title="Share the page on wahtsapp" href={'whatsapp://send?text= ארכיון הקלטות היכל הרוק של ישראל - פאב גבעת חיים מאוחד -  '+ concert.name +' '+ encodeURI(waLink)} data-action="share/whatsapp/share" target="_blank" rel="noreferrer"> <FaWhatsapp /> </a>   
+            <a className='WAbutton' title="Share the page on wahtsapp" href={'whatsapp://send?text= ארכיון הקלטות היכל הרוק של ישראל - פאב גבעת חיים מאוחד -  '+ concert.name +' - '+ encodeURI(waLink)} data-action="share/whatsapp/share" target="_blank" rel="noreferrer"> <FaWhatsapp /> </a>   
         </div>
     </>
   )

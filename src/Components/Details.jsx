@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import Spinner from './shared/spinner';
 
-function Details({concert, playPanel}) {
+function Details({concert, playPanel, fromPage}) {
     const [showsData, setShowsData] = useState([])
     const [showsPlaylist, setShowsPlaylist] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -33,10 +33,10 @@ function Details({concert, playPanel}) {
                 ))
             }
         </form>
-        <div className="detailsBlock">
+        {fromPage && (<div className="detailsBlock">
             {showsData.jpg && <img className="detailsPic" src={showsData.jpg} alt='poster' />}
             {showsData.text && <p className="detailsTxt">{showsData.text}</p>}
-        </div>
+        </div>)}
     </div>
   )
        
