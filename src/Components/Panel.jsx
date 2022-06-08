@@ -2,8 +2,7 @@ import AudioPlayer from "react-h5-audio-player";
 import './audio-player-style.scss'
 import { Link } from 'react-router-dom'
 
-
-function Panel({ concertNight, show }) {
+function Panel({ concertNight, show, showsPlaylist }) {
 
 return (
         <div className="panel" style={{color: "#fff"}}>

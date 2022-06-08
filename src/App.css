@@ -2,6 +2,7 @@
     text-align: center;
     background-color: #272727;
     position: relative;
+    top: 0;
 }
 
 .App-logo {
@@ -107,7 +108,7 @@ header {
     position: fixed;
     bottom: 0;
     background: #222;
-    padding: 10px;
+    padding: 10px 0;
     width: 100%;
     text-align: center;
     box-shadow: 0px -2px 4px 0px rgb(0 0 0 / 70%);
@@ -118,7 +119,6 @@ header {
     width: 90%;
     text-align: right;
     margin: 0 auto;
-    padding-right:10%;
     margin-bottom: 6px;
 }
 .panel .panelTitles h2 {
@@ -236,10 +236,11 @@ header {
     background: linear-gradient(180deg, rgba(70,42,48,1) 0%, rgba(40,40,40,1) 50%);
     background: -webkit-linear-gradient(-90deg, rgba(70,42,48,1) 0%, rgba(40,40,40,1) 50%);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     height: 100vh;
     width: 100vw;
     position: fixed;
+    top: 0;
 }
 .playTitle {
     display: inline-block;
@@ -333,6 +334,19 @@ p.detailsTxt {
     padding: 0 1px;
     left: 7px;
     fill: rgb(250, 232, 237);
+}
+a.WAbutton {
+    background-color: #25D366;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    font-size: 29px;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 

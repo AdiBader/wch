@@ -12,8 +12,8 @@
     background-color: transparent;
     border: 2px solid pink;
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     color: pink;
     cursor: pointer;
     animation: movebtn 3s ease-in-out infinite;

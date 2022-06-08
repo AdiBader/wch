@@ -11,6 +11,7 @@ import AboutPage from './Pages/AboutPage';
 import Page from './Pages/Page';
 import Panel from './Components/Panel';
 import ScrollToTop from './Components/ScrollToTop';
+import { DetailsProvider } from './Context/DetailsContext';
 
 
 const getUrl = "https://pubghm.herokuapp.com/main.json"
@@ -18,6 +19,7 @@ const getUrl = "https://pubghm.herokuapp.com/main.json"
 function App() {
     const [show, setShow] = useState([])
     const [concertNight, setConcertNight] = useState({"date":"","name":"","path":""})
+    const [showsPlaylist, setShowsPlaylist] = useState([])
     const [concerts, setConcerts] = useState([])
     const [filteredConcerts, setFilteredConcerts] = useState(concerts)
     const [searchField, setSearchField] = useState('')
@@ -41,9 +43,10 @@ function App() {
         setConcerts(response.data);        
     }
 
-    const playPanel = (concertNight, show) => {
+    const playPanel = (concertNight, show, showsPlaylist) => {
         setConcertNight(concertNight)
         setShow(show)
+        setShowsPlaylist(showsPlaylist)
     }
 
     const handleChange = (e) => {
@@ -59,6 +62,7 @@ function App() {
 
   return (
     <React.StrictMode>
+    <DetailsProvider>
     <Router>
     <div className='container' id='container'>
     
@@ -88,9 +92,10 @@ function App() {
     </Route>
     </Routes>
     <ScrollToTop />
-    <Panel show={show} concertNight={concertNight} />
+    <Panel show={show} concertNight={concertNight} showsPlaylist={showsPlaylist} />
     </div>
     </Router>
+    </DetailsProvider>
     </React.StrictMode>
   );
 }

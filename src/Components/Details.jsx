@@ -27,7 +27,7 @@ function Details({concert, playPanel}) {
     <div className="detailsDiv">
         <form >
             {showsPlaylist.map((show, index) => ( 
-                    <div className='shows' key={index} onClick={() => playPanel(concert, show)}>
+                    <div className='shows' key={index} onClick={() => playPanel(concert, show, showsPlaylist)}>
                         <div className="playConcert"><FiPlay style={{color: "pink"}}/><div className="playTitle">{show.title}</div></div>
                     </div>                                  
                 ))
