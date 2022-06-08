@@ -4,6 +4,7 @@
     position: relative;
     top: 0;
 }
+#container{background-color: #272727;}
 
 .App-logo {
   height: 40vmin;
