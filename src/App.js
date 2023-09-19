@@ -12,7 +12,7 @@ import Panel from './Components/Panel';
 import ScrollToTop from './Components/ScrollToTop';
 import { DetailsProvider } from './Context/DetailsContext';
 
-const getUrl = 'http://pubghm.herokuapp.com/main.json';
+const getUrl = 'https://pubghm.herokuapp.com/main.json';
 
 function App() {
 	const [show, setShow] = useState([]);
