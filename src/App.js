@@ -40,7 +40,7 @@ function App() {
 
 	// Fetch concerts
 	const fetchConcerts = async () => {
-		const response = await axios.get(getUrl, { mode: 'no-cors' });
+		const response = await axios.get(getUrl);
 		setConcerts(response.data);
 	};
 
