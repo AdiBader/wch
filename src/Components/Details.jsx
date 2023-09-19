@@ -12,16 +12,15 @@ function Details({ concert, playPanel, fromPage }) {
 	const url = `https://pubghm.herokuapp.com/main/${concert.path}.json`;
 
 	useEffect(() => {
+		// Fetch shows
+		const fetchShowsList = async () => {
+			const response = await axios.get(url);
+			setShowsData(response.data);
+			setShowsPlaylist(response.data.wavs);
+			setIsLoading(false);
+		};
 		fetchShowsList();
-	}, [concert]);
-
-	// Fetch shows
-	const fetchShowsList = async () => {
-		const response = await axios.get(url);
-		setShowsData(response.data);
-		setShowsPlaylist(response.data.wavs);
-		setIsLoading(false);
-	};
+	}, [concert, url]);
 
 	return isLoading ? (
 		<Spinner />
